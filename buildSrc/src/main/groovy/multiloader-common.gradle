@@ -99,6 +99,7 @@ processResources {
             "forge_version": forge_version,
             "forge_loader_version_range": forge_loader_version_range,
             'credits'                      : credits,
+            'repo_url'                     : repo_url,
             'java_version'                 : java_version
     ]
 
