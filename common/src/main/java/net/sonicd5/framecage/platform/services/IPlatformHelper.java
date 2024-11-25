@@ -1,4 +1,4 @@
-package net.sonicd5.framecage.platform;
+package net.sonicd5.framecage.platform.services;
 
 public interface IPlatformHelper {
 
@@ -30,7 +30,6 @@ public interface IPlatformHelper {
      * @return The name of the environment type.
      */
     default String getEnvironmentName() {
-
         return isDevelopmentEnvironment() ? "development" : "production";
     }
 }

@@ -2,12 +2,12 @@ package net.sonicd5.framecage.platform;
 
 import net.neoforged.fml.ModList;
 import net.neoforged.fml.loading.FMLLoader;
+import net.sonicd5.framecage.platform.services.IPlatformHelper;
 
 public class NeoForgePlatformHelper implements IPlatformHelper {
 
     @Override
     public String getPlatformName() {
-
         return "NeoForge";
     }
 

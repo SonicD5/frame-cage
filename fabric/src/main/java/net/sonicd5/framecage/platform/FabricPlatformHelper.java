@@ -1,6 +1,7 @@
 package net.sonicd5.framecage.platform;
 
 import net.fabricmc.loader.api.FabricLoader;
+import net.sonicd5.framecage.platform.services.IPlatformHelper;
 
 public class FabricPlatformHelper implements IPlatformHelper {
 
