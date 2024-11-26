@@ -2,6 +2,7 @@ package net.sonicd5.framecage.platform.services;
 
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
 
 import java.util.function.Function;
 import java.util.function.Supplier;
@@ -10,7 +11,7 @@ public interface IRegistryHelper {
 
     <I extends Item> Supplier<I> registerItem(
             String path,
-            Function<I.Properties, I> function,
+            Function<Item.Properties, I> function,
             I.Properties properties
     );
 
@@ -34,4 +35,10 @@ public interface IRegistryHelper {
     }
 
     Supplier<SoundEvent> registerSound(String path);
+
+    <B extends Block> Supplier<B> registerBlock(
+            String path,
+            Function<B.Properties, B> function
+
+    );
 }

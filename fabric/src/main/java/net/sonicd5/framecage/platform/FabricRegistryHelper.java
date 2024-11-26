@@ -7,6 +7,8 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.sonicd5.framecage.FrameCage;
 import net.sonicd5.framecage.platform.services.IRegistryHelper;
 
@@ -35,4 +37,11 @@ public class FabricRegistryHelper implements IRegistryHelper {
                 location, SoundEvent.createVariableRangeEvent(location)
         );
     }
+
+    @Override
+    public <B extends Block> Supplier<B> registerBlock(String path, Function<BlockBehaviour.Properties, B> function) {
+        return null;
+    }
+
+
 }
