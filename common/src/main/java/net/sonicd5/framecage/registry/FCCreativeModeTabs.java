@@ -9,7 +9,7 @@ import static net.sonicd5.framecage.platform.Services.REGISTRY;
 
 public class FCCreativeModeTabs {
 
-    public static final Supplier<CreativeModeTab> GUNS = REGISTRY.creativeTab(
+    public static final Supplier<CreativeModeTab> GUNS = REGISTRY.creativeModeTab(
             "guns", builder -> builder
                     .icon(() -> new ItemStack(FCItems.RUST_BRUSH.get()))
                     .displayItems((itemDisplayParameters, output) -> {
@@ -18,7 +18,7 @@ public class FCCreativeModeTabs {
 
     );
 
-    public static final Supplier<CreativeModeTab> MISC = REGISTRY.creativeTab(
+    public static final Supplier<CreativeModeTab> MISC = REGISTRY.creativeModeTab(
             "misc", builder -> builder
                     .icon(() -> new ItemStack(FCItems.RUST_BRUSH.get()))
                     .displayItems((itemDisplayParameters, output) -> {

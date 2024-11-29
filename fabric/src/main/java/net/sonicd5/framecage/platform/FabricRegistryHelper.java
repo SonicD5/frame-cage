@@ -88,7 +88,7 @@ public class FabricRegistryHelper implements IRegistryHelper {
 
     @SuppressWarnings("unchecked")
     @Override
-    public <G extends CreativeModeTab> Supplier<G> creativeTab(
+    public <G extends CreativeModeTab> Supplier<G> creativeModeTab(
             String path,
             UnaryOperator<CreativeModeTab.Builder> builderFunc
     ) {

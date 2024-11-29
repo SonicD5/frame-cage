@@ -34,7 +34,7 @@ public interface IRegistryHelper {
             String path,
             Item.Properties properties
     ) {
-        return (Supplier<I>) item(path, Item::new, properties);
+        return item(path, props -> (I) new Item(props), properties);
     }
 
     default <I extends Item> Supplier<I> item(String path) {
@@ -119,10 +119,9 @@ public interface IRegistryHelper {
             EntityType.Builder<T> builder
     );
 
-    <G extends CreativeModeTab> Supplier<G> creativeTab(
+    <G extends CreativeModeTab> Supplier<G> creativeModeTab(
             String path,
             UnaryOperator<CreativeModeTab.Builder> builderFunc
     );
-
 
 }

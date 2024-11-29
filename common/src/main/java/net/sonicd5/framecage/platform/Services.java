@@ -11,12 +11,12 @@ public class Services {
     public static final IRegistryHelper REGISTRY = load(IRegistryHelper.class);
     public static final IPlatformHelper PLATFORM = load(IPlatformHelper.class);
 
-    public static <T> T load(Class<T> clazz) {
+    public static <T> T load(Class<T> service) {
 
-        final T loadedService = ServiceLoader.load(clazz)
+        final T loadedService = ServiceLoader.load(service)
                 .findFirst()
-                .orElseThrow(() -> new NullPointerException("Failed to load service for " + clazz.getName()));
-        FrameCage.LOGGER.debug("Loaded {} for service {}", loadedService, clazz);
+                .orElseThrow(() -> new NullPointerException("Failed to load service for " + service.getName()));
+        FrameCage.LOGGER.debug("Loaded {} for service {}", loadedService, service);
         return loadedService;
     }
 }
