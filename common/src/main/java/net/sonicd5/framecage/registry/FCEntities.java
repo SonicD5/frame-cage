@@ -1,14 +1,14 @@
 package net.sonicd5.framecage.registry;
 
-import net.minecraft.world.level.block.Block;
-
-import java.util.function.Supplier;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.MobCategory;
 
 import static net.sonicd5.framecage.platform.Services.REGISTRY;
 
-public class FCBlocks {
+import java.util.function.Supplier;
 
-    public static final Supplier<Block> PLACEHOLDER = REGISTRY.block("placeholder", true);
+public class FCEntities {
 
     public static void init() {}
     public static void init(Runnable work) {
