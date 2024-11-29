@@ -9,14 +9,6 @@ import static net.sonicd5.framecage.platform.Services.REGISTRY;
 
 public class FCCreativeModeTabs {
 
-    public static final Supplier<CreativeModeTab> MISC = REGISTRY.creativeTab(
-            "misc", builder -> builder
-                    .icon(() -> new ItemStack(FCItems.RUST_BRUSH.get()))
-                    .displayItems((itemDisplayParameters, output) -> {
-                        output.accept(FCItems.RUST_BRUSH.get());
-                    })
-    );
-
     public static final Supplier<CreativeModeTab> GUNS = REGISTRY.creativeTab(
             "guns", builder -> builder
                     .icon(() -> new ItemStack(FCItems.RUST_BRUSH.get()))
@@ -24,6 +16,14 @@ public class FCCreativeModeTabs {
                         output.accept(FCItems.RUST_BRUSH.get());
                     })
 
+    );
+
+    public static final Supplier<CreativeModeTab> MISC = REGISTRY.creativeTab(
+            "misc", builder -> builder
+                    .icon(() -> new ItemStack(FCItems.RUST_BRUSH.get()))
+                    .displayItems((itemDisplayParameters, output) -> {
+                        output.accept(FCItems.RUST_BRUSH.get());
+                    })
     );
 
     public static void init() {}
