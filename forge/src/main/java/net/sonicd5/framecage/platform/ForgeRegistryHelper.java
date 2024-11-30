@@ -82,10 +82,8 @@ public class ForgeRegistryHelper implements IRegistryHelper {
         return FrameCageForge.CREATIVE_MODE_TABS.register(
                 path, () -> (G) builderFunc.apply(CreativeModeTab.builder())
                         .title(Component.translatable(
-                                String.format("itemGroup.%s.%s", FrameCage.MOD_ID, path)))
+                                "itemGroup.%s.%s".formatted(FrameCage.MOD_ID, path)))
                         .build()
         );
     }
-
-
 }

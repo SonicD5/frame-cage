@@ -15,7 +15,9 @@ public class Services {
 
         final T loadedService = ServiceLoader.load(service)
                 .findFirst()
-                .orElseThrow(() -> new NullPointerException("Failed to load service for " + service.getName()));
+                .orElseThrow(() -> new NullPointerException(
+                        "Failed to load service for " + service.getName()));
+
         FrameCage.LOGGER.debug("Loaded {} for service {}", loadedService, service);
         return loadedService;
     }

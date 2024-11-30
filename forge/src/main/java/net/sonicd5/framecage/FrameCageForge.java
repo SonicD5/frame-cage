@@ -1,7 +1,9 @@
 package net.sonicd5.framecage;
 
+import net.minecraft.core.Registry;
 import net.minecraft.core.particles.ParticleType;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.CreativeModeTab;
@@ -13,6 +15,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.IForgeRegistry;
 import net.sonicd5.framecage.registry.FCBlocks;
 import net.sonicd5.framecage.registry.FCCreativeModeTabs;
 import net.sonicd5.framecage.registry.FCEntities;
@@ -21,23 +24,18 @@ import net.sonicd5.framecage.registry.FCItems;
 @Mod(FrameCage.MOD_ID)
 public class FrameCageForge {
 
-    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(
-            ForgeRegistries.ITEMS, FrameCage.MOD_ID);
-
-    public static final DeferredRegister<SoundEvent> SOUND_EVENTS = DeferredRegister.create(
-            ForgeRegistries.SOUND_EVENTS, FrameCage.MOD_ID);
-
-    public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(
-            ForgeRegistries.BLOCKS, FrameCage.MOD_ID);
-
-    public static final DeferredRegister<ParticleType<?>> PARTICLE_TYPES = DeferredRegister.create(
-            ForgeRegistries.PARTICLE_TYPES, FrameCage.MOD_ID);
-
-    public static final DeferredRegister<EntityType<?>> ENTITY_TYPES = DeferredRegister.create(
-            ForgeRegistries.ENTITY_TYPES, FrameCage.MOD_ID);
-
-    public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(
-            Registries.CREATIVE_MODE_TAB, FrameCage.MOD_ID);
+    public static final DeferredRegister<Item> ITEMS = createDeferredRegister(
+            ForgeRegistries.ITEMS);
+    public static final DeferredRegister<Block> BLOCKS = createDeferredRegister(
+            ForgeRegistries.BLOCKS);
+    public static final DeferredRegister<SoundEvent> SOUND_EVENTS = createDeferredRegister(
+            ForgeRegistries.SOUND_EVENTS);
+    public static final DeferredRegister<ParticleType<?>> PARTICLE_TYPES = createDeferredRegister(
+            ForgeRegistries.PARTICLE_TYPES);
+    public static final DeferredRegister<EntityType<?>> ENTITY_TYPES = createDeferredRegister(
+            ForgeRegistries.ENTITY_TYPES);
+    public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = createDeferredRegister(
+            Registries.CREATIVE_MODE_TAB);
 
     public FrameCageForge(FMLJavaModLoadingContext modLoadingContext) {
         MinecraftForge.EVENT_BUS.register(this);
@@ -51,6 +49,15 @@ public class FrameCageForge {
 
         FrameCage.init();
     }
+
+    private static <T> DeferredRegister<T> createDeferredRegister(IForgeRegistry<T> reg) {
+        return DeferredRegister.create(reg, FrameCage.MOD_ID);
+    }
+
+    private static <T> DeferredRegister<T> createDeferredRegister(ResourceKey<? extends Registry<T>> key) {
+        return DeferredRegister.create(key, FrameCage.MOD_ID);
+    }
+
 
 
 }

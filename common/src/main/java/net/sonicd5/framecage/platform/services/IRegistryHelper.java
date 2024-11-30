@@ -1,5 +1,6 @@
 package net.sonicd5.framecage.platform.services;
 
+import net.minecraft.core.particles.ParticleType;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
@@ -121,7 +122,7 @@ public interface IRegistryHelper {
 
     <G extends CreativeModeTab> Supplier<G> creativeModeTab(
             String path,
-            UnaryOperator<CreativeModeTab.Builder> builderFunc
+            final UnaryOperator<CreativeModeTab.Builder> builderFunc
     );
 
 }
