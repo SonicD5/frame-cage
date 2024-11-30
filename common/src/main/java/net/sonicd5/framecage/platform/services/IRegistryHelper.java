@@ -122,7 +122,7 @@ public interface IRegistryHelper {
 
     <G extends CreativeModeTab> Supplier<G> creativeModeTab(
             String path,
-            final UnaryOperator<CreativeModeTab.Builder> builderFunc
+            UnaryOperator<CreativeModeTab.Builder> builderFunc
     );
 
 }

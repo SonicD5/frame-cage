@@ -78,7 +78,7 @@ public class FabricRegistryHelper implements IRegistryHelper {
 
     @SuppressWarnings("unchecked")
     @Override
-    public <E extends EntityType<T>, T extends Entity> Supplier<E> entityType(String path, final EntityType.Builder<T> builder) {
+    public <E extends EntityType<T>, T extends Entity> Supplier<E> entityType(String path, EntityType.Builder<T> builder) {
         var resourceKey = ResourceKey.create(Registries.ENTITY_TYPE, FrameCage.id(path));
         final E entityType = (E) builder.build(resourceKey);
 
@@ -90,7 +90,7 @@ public class FabricRegistryHelper implements IRegistryHelper {
     @Override
     public <G extends CreativeModeTab> Supplier<G> creativeModeTab(
             String path,
-            final UnaryOperator<CreativeModeTab.Builder> builderFunc
+            UnaryOperator<CreativeModeTab.Builder> builderFunc
     ) {
         final G creativeTab = (G) builderFunc.apply(FabricItemGroup.builder())
                 .title(Component.translatable(String.format("itemGroup.%s.%s", FrameCage.MOD_ID, path)))
